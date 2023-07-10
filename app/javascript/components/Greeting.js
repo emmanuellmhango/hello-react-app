@@ -11,18 +11,14 @@ const Greeting = () => {
     try {
       const response = await axios.get("http://127.0.0.1:5000/messeges");
       const { message } = response.data;
-      return message;
+      dispatch(addMessage(message));
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    const getMessage = async () => {
-      const message = await fetchMessage();
-      dispatch(addMessage(message));
-    };
-    getMessage();
+    fetchMessage();
   }, []);
 
   return (
