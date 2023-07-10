@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Messeges</h1>
+
+<div id="messeges">
+  <% @messeges.each do |messege| %>
+    <%= render messege %>
+    <p>
+      <%= link_to "Show this messege", messege %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New messege", new_messege_path %>

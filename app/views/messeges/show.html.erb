@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @messege %>
+
+<div>
+  <%= link_to "Edit this messege", edit_messege_path(@messege) %> |
+  <%= link_to "Back to messeges", messeges_path %>
+
+  <%= button_to "Destroy this messege", @messege, method: :delete %>
+</div>
