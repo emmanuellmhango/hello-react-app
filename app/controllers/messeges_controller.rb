@@ -3,7 +3,8 @@ class MessegesController < ApplicationController
 
   # GET /messeges or /messeges.json
   def index
-    @messeges = Messege.all
+    @greeting = Messege.order('RANDOM()').first
+    render json: { message: @greeting.message }
   end
 
   # GET /messeges/1 or /messeges/1.json

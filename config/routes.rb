@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :messeges
+  get'/messeges', to: 'messeges#index'
   root 'root#index'
 end
