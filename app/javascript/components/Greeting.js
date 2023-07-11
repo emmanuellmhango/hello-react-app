@@ -8,13 +8,9 @@ const Greeting = () => {
   const { message } = useSelector((state) => state.message);
 
   const fetchMessage = async () => {
-    try {
-      const response = await axios.get('http://127.0.0.1:5000/messeges');
-      const { message } = response.data;
-      dispatch(addMessage(message));
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await axios.get('http://127.0.0.1:5000/messeges');
+    const { message } = response.data;
+    dispatch(addMessage(message));
   };
 
   useEffect(() => {
